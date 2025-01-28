@@ -1,3 +1,6 @@
 [submodule "qmk_firmware"]
 	path = qmk_firmware
 	url = https://github.com/zsa/qmk_firmware.git
+[submodule "7yvQx/qmk-vim"]
+	path = 7yvQx/qmk-vim
+	url = https://github.com/andrewjrae/qmk-vim.git

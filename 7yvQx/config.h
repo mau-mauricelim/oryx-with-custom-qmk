@@ -10,3 +10,12 @@
 
 #define RGB_MATRIX_STARTUP_SPD 60
 
+// https://github.com/andrewjrae/qmk-vim
+BETTER_VISUAL_MODE = yes
+VIM_I_TEXT_OBJECTS = yes
+VIM_A_TEXT_OBJECTS = yes
+VIM_G_MOTIONS = yes
+VIM_PASTE_BEFORE = yes
+VIM_REPLACE = yes
+VIM_DOT_REPEAT = yes
+VIM_W_BEGINNING_OF_WORD = yes

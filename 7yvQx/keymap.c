@@ -1,13 +1,13 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
+#include "qmk-vim/src/vim.h"
 #define MOON_LED_LEVEL LED_LEVEL
 #define ML_SAFE_RANGE SAFE_RANGE
 
 enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
+  TOG_VIM
 };
-
-
 
 enum tap_dance_codes {
   DANCE_0,
@@ -16,7 +16,7 @@ enum tap_dance_codes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_TRANSPARENT, 
+    TOG_VIM,        KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_TRANSPARENT, 
     KC_GRAVE,       KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_TRANSPARENT, 
     KC_ESCAPE,      KC_A,           KC_S,           MT(MOD_LSFT, KC_D),MT(MOD_LCTL, KC_F),KC_G,                                           KC_H,           MT(MOD_RCTL, KC_J),MT(MOD_RSFT, KC_K),KC_L,           KC_SCLN,        KC_QUOTE,       
     KC_LEFT_CTRL,   MT(MOD_LGUI, KC_Z),MT(MOD_LALT, KC_X),KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       MT(MOD_RALT, KC_DOT),MT(MOD_RGUI, KC_SLASH),KC_EXLM,        
@@ -78,7 +78,6 @@ const uint16_t PROGMEM combo0[] = { MT(MOD_RCTL, KC_J), MT(MOD_RSFT, KC_K), COMB
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_ESCAPE),
 };
-
 
 extern rgb_config_t rgb_matrix_config;
 
@@ -161,7 +160,19 @@ bool rgb_matrix_indicators_user(void) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  // Process case modes
+  if (!process_vim_mode(keycode, record)) {
+    return false;
+  }
+
+  // Regular user keycode case statement
   switch (keycode) {
+    case TOG_VIM:
+      if (record->event.pressed) {
+        toggle_vim_mode();
+        if (!vim_mode_enabled() && !IS_LAYER_ON(0)) { layer_move(0); }
+      }
+      return false;
 
     case RGB_SLD:
       if (record->event.pressed) {
@@ -172,6 +183,35 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
+// Adding Keybinds
+bool process_normal_mode_user(uint16_t keycode, const keyrecord_t *record) {
+    if (record->event.pressed && keycode == LSFT(KC_H)) {
+        tap_code16(LSFT(KC_HOME));
+        return false;
+    }
+    if (record->event.pressed && keycode == LSFT(KC_L)) {
+        tap_code16(LSFT(KC_END));
+        return false;
+    }
+    return true;
+}
+bool process_visual_mode_user(uint16_t keycode, const keyrecord_t *record) {
+    if (record->event.pressed && keycode == LSFT(KC_H)) {
+        tap_code16(LSFT(KC_HOME));
+        return false;
+    }
+    if (record->event.pressed && keycode == LSFT(KC_L)) {
+        tap_code16(LSFT(KC_END));
+        return false;
+    }
+    return true;
+}
+
+// Setting Custom State
+void normal_mode_user(void) { if (!IS_LAYER_ON(5)) { layer_move(5); } }
+void insert_mode_user(void) { if (!IS_LAYER_ON(6)) { layer_move(6); } }
+void visual_mode_user(void) { if (!IS_LAYER_ON(7)) { layer_move(7); } }
+void visual_line_mode_user(void) { if (!IS_LAYER_ON(7)) { layer_move(7); } }
 
 typedef struct {
     bool is_press_action;
@@ -202,7 +242,6 @@ uint8_t dance_step(tap_dance_state_t *state) {
     }
     return MORE_TAPS;
 }
-
 
 void dance_0_finished(tap_dance_state_t *state, void *user_data);
 void dance_0_reset(tap_dance_state_t *state, void *user_data);
