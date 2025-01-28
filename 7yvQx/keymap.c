@@ -200,7 +200,7 @@ bool process_visual_mode_user(uint16_t keycode, const keyrecord_t *record) {
 void normal_mode_user(void) { if (!IS_LAYER_ON(5)) { layer_move(5); } }
 void insert_mode_user(void) { if (!IS_LAYER_ON(6)) { layer_move(6); } }
 void visual_mode_user(void) { if (!IS_LAYER_ON(7)) { layer_move(7); } }
-void visual_line_mode_user(void) { visual_mode_user() }
+void visual_line_mode_user(void) { visual_mode_user(); }
 
 typedef struct {
   bool is_press_action;
