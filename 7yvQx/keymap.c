@@ -50,27 +50,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_LEFT_GUI,    KC_LEFT_ALT,    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_F1,          KC_F2,          KC_F3,          KC_F10,         KC_TRANSPARENT,
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
-  [5] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
-  ),
-  [6] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
-  ),
-  [7] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
-  ),
 };
 
 const uint16_t PROGMEM combo0[] = { MT(MOD_RCTL, KC_J), MT(MOD_RSFT, KC_K), COMBO_END};
@@ -91,9 +70,6 @@ const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
   [2] = { {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {67,111,202}, {67,111,202}, {254,153,239}, {0,0,0}, {67,111,202}, {67,111,202}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {148,161,246}, {28,128,235}, {205,127,228}, {28,128,235}, {148,161,246}, {0,0,0}, {148,161,246}, {205,127,228}, {28,128,235}, {205,127,228}, {148,161,246}, {254,153,239}, {148,161,246}, {28,128,235}, {205,127,228}, {28,128,235}, {148,161,246}, {0,0,0}, {28,128,235}, {28,128,235} },
   [3] = { {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {67,111,202}, {67,111,202}, {0,0,0}, {0,0,0}, {67,111,202}, {67,111,202}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {254,153,239}, {254,153,239}, {205,127,228}, {0,0,0}, {0,0,0}, {28,128,235}, {28,128,235}, {28,128,235}, {28,128,235}, {0,0,0}, {0,0,0}, {0,0,0}, {148,161,246}, {148,161,246}, {205,127,228}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0} },
   [4] = { {156,91,56}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {28,128,235}, {28,128,235}, {254,153,239}, {254,153,239}, {254,153,239}, {0,0,0}, {0,0,0}, {0,0,0}, {67,111,202}, {67,111,202}, {0,0,0}, {0,0,0}, {67,111,202}, {67,111,202}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {28,128,235}, {148,161,246}, {28,128,235}, {236,150,255}, {0,0,0}, {0,0,0}, {148,161,246}, {28,128,235}, {148,161,246}, {236,150,255}, {0,0,0}, {0,0,0}, {28,128,235}, {148,161,246}, {28,128,235}, {236,150,255}, {0,0,0}, {0,0,0}, {0,0,0} },
-  [5] = { {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202}, {67,111,202} },
-  [6] = { {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246}, {148,161,246} },
-  [7] = { {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228}, {205,127,228} },
 };
 
 void set_layer_color(int layer) {
@@ -118,7 +94,7 @@ bool rgb_matrix_indicators_user(void) {
   if (keyboard_config.disable_layer_led) { return false; }
   switch (biton32(layer_state)) {
     case 0:
-      set_layer_color(0);
+      if (!vim_mode_enabled()) { set_layer_color(0); }
       break;
     case 1:
       set_layer_color(1);
@@ -131,15 +107,6 @@ bool rgb_matrix_indicators_user(void) {
       break;
     case 4:
       set_layer_color(4);
-      break;
-    case 5:
-      set_layer_color(5);
-      break;
-    case 6:
-      set_layer_color(6);
-      break;
-    case 7:
-      set_layer_color(7);
       break;
     default:
       if (rgb_matrix_get_flags() == LED_FLAG_NONE)
@@ -158,7 +125,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
       case TOG_VIM:
         toggle_vim_mode();
-        if (!vim_mode_enabled() && !IS_LAYER_ON(0)) { layer_move(0); }
         return false;
       case RGB_SLD:
         rgblight_mode(1);
@@ -197,9 +163,9 @@ bool process_visual_mode_user(uint16_t keycode, const keyrecord_t *record) {
 }
 
 // Setting Custom State
-void normal_mode_user(void) { if (!IS_LAYER_ON(5)) { layer_move(5); } }
-void insert_mode_user(void) { if (!IS_LAYER_ON(6)) { layer_move(6); } }
-void visual_mode_user(void) { if (!IS_LAYER_ON(7)) { layer_move(7); } }
+void normal_mode_user(void) { if (IS_LAYER_ON(0)) { rgb_matrix_set_color_all(67,111,202); } }
+void insert_mode_user(void) { if (IS_LAYER_ON(0)) { rgb_matrix_set_color_all(148,161,246); } }
+void visual_mode_user(void) { if (IS_LAYER_ON(0)) { rgb_matrix_set_color_all(205,127,228); } }
 void visual_line_mode_user(void) { visual_mode_user(); }
 
 typedef struct {
