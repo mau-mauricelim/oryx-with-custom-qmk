@@ -16,8 +16,6 @@ enum custom_keycodes {
   ST_MACRO_7,
 };
 
-
-
 enum tap_dance_codes {
   DANCE_0,
   DANCE_1,
@@ -72,6 +70,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 };
 
+// https://getreuer.info/posts/keyboards/achordion/index.html#relationship-between-achordion-and-chordal-hold
+// https://docs.qmk.fm/tap_hold#chordal-hold-handedness
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
+    LAYOUT(
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+                       '*', '*',            '*', '*'
+    );
+
 const uint16_t PROGMEM combo0[] = { MT(MOD_RCTL, KC_J), MT(MOD_RSFT, KC_K), COMBO_END};
 const uint16_t PROGMEM combo1[] = { MT(MOD_LALT, KC_X), KC_C, COMBO_END};
 const uint16_t PROGMEM combo2[] = { KC_C, KC_V, COMBO_END};
@@ -85,7 +94,6 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo3, KC_LBRC),
     COMBO(combo4, KC_RBRC),
 };
-
 
 extern rgb_config_t rgb_matrix_config;
 
@@ -203,7 +211,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
-
 
 typedef struct {
     bool is_press_action;
