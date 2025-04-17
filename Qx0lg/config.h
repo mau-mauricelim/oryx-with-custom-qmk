@@ -11,7 +11,7 @@
 #undef MOUSEKEY_INTERVAL
 #define MOUSEKEY_INTERVAL 18
 
-#define SERIAL_NUMBER "Qx0lg/rbPN5Q"
+#define SERIAL_NUMBER "Qx0lg/Wv4jrM"
 #define LAYER_STATE_8BIT
 #define COMBO_COUNT 5
 
